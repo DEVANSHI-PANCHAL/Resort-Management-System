@@ -73,12 +73,12 @@ const GameListing = () => {
         formatter:playBtn ,
          
         },
-        {
-          dataField: "plus",
-          text: "Plus",
-        formatter:plusBtn ,
+        // {
+        //   dataField: "plus",
+        //   text: "Plus",
+        // formatter:plusBtn ,
          
-        },
+        // },
     
       ];
 
@@ -87,8 +87,9 @@ const GameListing = () => {
       const getAllGames = async () => {
         try {
           const { data } = await getAvailableGames(id);
-          console.log(data);
+          
           setGames(data);
+          console.log("get all games:",data);
         } catch (error) {
           console.log(error);
         }
@@ -137,7 +138,7 @@ const GameListing = () => {
           <Container>
             <Navbar.Brand>Games</Navbar.Brand>
           </Container>
-          <Container>Points: {counter}</Container>
+          {/* <Container>Points: {counter}</Container> */}
           <Container>
             <Button onClick={handleLogOut}>Log Out</Button>
           </Container>

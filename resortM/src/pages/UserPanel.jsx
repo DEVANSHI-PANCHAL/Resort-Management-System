@@ -58,6 +58,7 @@ const UserPanel = () => {
                 <Card.Body>
                   <Card.Title>{resort.resortname}</Card.Title>
                   <Card.Text>{resort.description}</Card.Text>
+                  {/* <Card.Text>{resort.status}</Card.Text> */}
                   <Button variant="primary" onClick={() => handleCheckIn(resort)}>Check in</Button>
                 </Card.Body>
               </Card>

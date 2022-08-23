@@ -58,7 +58,7 @@ const Games = () => {
     // var result = Object.keys(row).map((key) => [Number(key), row[key]]);
     // console.log("res",result);
     const objj = row.resortDetails.resortname
-    // const stringRes = JSON.stringify(objj);
+    // const stringRes = JSON.stringify(objj);      
     return (
       objj
     );
@@ -99,7 +99,7 @@ const Games = () => {
     // console.log("val"+ JSON.stringify(e.target.value))
     const resortDetails = resorts.filter(resort => resort._id === val)[0] // CHANGELOG: storing whole resort object in form data rather than resort name only
     console.log("RD ", resortDetails, resorts)
-    setFormData({ ...formData, resortDetails: resortDetails });
+    setFormData({ ...formData, resortDetails: resortDetails, resortId: resortDetails._id });
   }
 
   const handleSubmit = async (e) => {

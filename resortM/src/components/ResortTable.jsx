@@ -90,11 +90,11 @@ const ResortTable = () => {
     },
   ];
 
-  const handleDelete = async (resortId) => {
-    console.log("resorts",resortId)
+  const handleDelete = async (row) => {
+    // console.log("resorts",resortId)
     try {
       
-      // const resortId = resorts._id;
+      const resortId = row._id;
       console.log(resortId);
       const { data } = await deleteResort(resortId);
       console.log(data);
@@ -124,6 +124,7 @@ const ResortTable = () => {
       if (mode === "submit") {
         const { data } = await addResort(formData);
         console.log(data);
+        
       } else {
         const { data } = await editResort(formData);
         console.log(data);

@@ -5,8 +5,8 @@ import GameModel from "../models/game.js";
 export const addGame = async (req, res) => {
   try {
     console.log(req.body)
-    const {  gameName,description,gamePoints,status,resortDetails } = req.body;
-    const games = await GameModel.create({gameName, description , gamePoints,status,resortDetails});
+    const {  gameName,description,gamePoints,status,resortDetails, resortId } = req.body;
+    const games = await GameModel.create({gameName, description , gamePoints,status,resortDetails, resortId});
     res.status(200).json( games );
   } catch (error) {
     console.log(error);
@@ -16,13 +16,11 @@ export const addGame = async (req, res) => {
 
 export const getGame = async (req, res) => {
   try {
-   
     const { id } = req.params;
     console.log("id", id)
-    const data = await GameModel.find({ resortDetails: id }); // CHANGELOG: changes resortId => resortDetails
-    console.log(JSON.stringify(data))
+    const data = await GameModel.find({ resortId: id }); // CHANGELOG: changes resortId => resortDetails
     
-    res.status(200).json( data );
+    return res.status(200).json( data );
   } catch (error) {
     res.status(500).json({ message: "Something went wrong" });
   }
