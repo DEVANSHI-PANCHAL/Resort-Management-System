@@ -53,12 +53,22 @@ const Games = () => {
       </Button>
     );
   };
+  const displayResortDetail = (cell, row, rowIndex, formatExtraData) => {
+    // const resDet = JSON.stringify(row.resortDetails)
+    // var result = Object.keys(row).map((key) => [Number(key), row[key]]);
+    // console.log("res",result);
+    const objj = row.resortDetails.resortname
+    // const stringRes = JSON.stringify(objj);
+    return (
+      objj
+    );
+  }
   const columns = [
     { dataField: "status", text: "Status"},
     { dataField: "gameName", text: "Game Name"},
     { dataField: "description", text: "Description", sort: true },
     { dataField: "gamePoints", text: "Game Points", sort: true },
-    { dataField: "resortDetails", text: "Resort"},
+    { dataField: "resortDetails", text: "Resort",formatter:displayResortDetail},
     {
       dataField: "edit",
       text: "Edit",
